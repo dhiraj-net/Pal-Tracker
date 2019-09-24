@@ -39,6 +39,7 @@ jobs:
             echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
             apt-get update
             apt-get install cf-cli
+
        - run:
           name: Install jq
           command: |
@@ -52,6 +53,7 @@ jobs:
           command: |
             mkdir -p $EXTRACT_DEST
             tar -xvzf artifacts/pal-tracker-$CIRCLE_SHA1.tgz -C $EXTRACT_DEST
+
       - run:
           name: Deploy
           command: |
@@ -80,6 +82,7 @@ jobs:
             echo "deb https://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
             apt-get update
             apt-get install cf-cli
+            
       - run:
           name: Install jq
           command: |
